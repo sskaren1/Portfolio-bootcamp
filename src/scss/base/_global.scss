@@ -1,0 +1,39 @@
+@use 'variables' as v;
+@use 'colours' as c;
+@use 'mixins' as m;
+
+html{
+    font-size: 62.5%;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*,*:before, *:after{
+    box-sizing: inherit;
+    margin:0;
+    padding: 0;
+}
+[class$="__container"] {
+    width: 95%;
+    max-width: 1200px;
+    margin:0 auto;
+    @include m.macbook_air{
+        max-width: 1900px;;
+    }
+    @include m.macbook_pro_13{
+        max-width: 2800px;
+    }
+}
+img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+button{
+    border: none;
+    background-color: transparent;
+    color: c.$neutral-2;
+}

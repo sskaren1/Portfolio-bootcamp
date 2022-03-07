@@ -1,0 +1,49 @@
+@use "base/variables" as v;
+@use "base/colours" as c;
+@use "base/mixins" as m;
+.skill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin: calc(v.$margin_elemt * 3) 0 calc(v.$margin_elemt * 4);
+  h2 {
+    margin-bottom: calc(v.$margin_elemt * 3);
+  }
+}
+
+.skills {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.skill__icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: c.$skill-bg;
+  border: none;
+  border-radius: 1.5rem;
+  width: 10rem;
+  margin: 0 v.$margin_elemt calc(v.$margin_elemt*2);
+  padding: v.$padding_elemt;
+  @include m.tablet{
+    width: 13rem;
+  }
+  &:hover {
+    background-color: c.$skill-hover;
+  }
+  i {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    @include m.tablet{
+      font-size: 6rem;
+    }
+  }
+  h4 {
+    color: c.$neutral-2;
+  }
+}

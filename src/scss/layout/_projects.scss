@@ -1,0 +1,82 @@
+@use "base/variables" as v;
+@use "base/colours" as c;
+@use "base/mixins" as m;
+
+// projects located in the index
+.projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin-bottom: calc(v.$margin_elemt * 3);
+  .projects__title {
+    margin: calc(v.$margin_elemt * 2) 0;
+    @include m.tablet {
+      margin-bottom: calc(v.$margin_elemt * 3);
+    }
+  }
+}
+.card--image {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.55) 49%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url(../img/javascript_illustration.svg);
+  background-position: center 20%;
+  background-repeat: repeat, no-repeat;
+  background-size: contain;
+  @include m.tablet {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.55) 49%,
+        rgba(0, 0, 0, 0.8) 100%
+      ),
+      url(../img/javascript_illustration.svg);
+    background-repeat: repeat, no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+.card{
+  min-width: 25rem;
+  width: auto;
+  margin: 0 auto;
+  padding: v.$padding_elemt 0;
+  border: none;
+  border-radius: 1rem;
+  &:hover {
+    box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.81);
+    -webkit-box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.81);
+    -moz-box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.81);
+  }
+  @include m.tablet {
+    padding: calc(v.$padding_elemt * 4) 0;
+    width: 70rem;
+  }
+  .card__container {
+    @include m.grid-rows(2, v.$gap-2);
+    height: 100%;
+    @include m.tablet {
+      grid-row: unset;
+      @include m.grid-columns(2, v.$gap-2);
+    }
+  }
+}
+.card__text {
+  grid-row: 2/3;
+  padding-top: v.$padding_elemt;
+  text-align: center;
+  .card__title,
+  .card__paragraph {
+    text-align: center;
+    margin-bottom: v.$margin_elemt;
+  }
+  @include m.tablet {
+    grid-row: unset;
+    grid-column: 2/3;
+    padding-top: 0;
+  }
+}

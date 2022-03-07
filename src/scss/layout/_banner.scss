@@ -1,0 +1,87 @@
+@use "base/variables" as v;
+@use "base/colours" as c;
+@use "base/mixins" as m;
+
+.banner {
+  height: 90vh;
+  background: linear-gradient(
+      to bottom,
+      c.$gradient-1 0%,
+      c.$gradient-2 30%,
+      c.$gradient-4 60%,
+      c.$gradient-4 100%
+    ),
+    url(../img/javascript_illustration.svg);
+  background-repeat: no-repeat;
+  background-position: center 80%;
+  background-size: contain;
+  @include m.tablet {
+    height: 90vh;
+    background: linear-gradient(
+        to left,
+        c.$gradient-1 0%,
+        c.$gradient-2 30%,
+        c.$gradient-3 60%,
+        c.$gradient-4 100%
+      ),
+      url(../img/javascript_illustration.svg);
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: contain;
+  }
+  .banner__container {
+    @include m.grid-rows(2, v.$gap-2);
+    height: 100%;
+    @include m.tablet {
+      grid-row: unset;
+      @include m.grid-columns(2, v.$gap-2);
+    }
+  }
+}
+.banner__description {
+  grid-row: 1/2;
+  @include m.tablet {
+    grid-row: unset;
+    grid-column: 2/3;
+  }
+  h1 {
+    margin-bottom: v.$margin_elemt;
+    @include m.tablet {
+      text-align: left;
+    }
+  }
+
+  p {
+    text-align: center;
+    color: c.$paragraph;
+    @include m.tablet {
+      text-align: left;
+    }
+  }
+}
+
+.custom-shape-divider {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  @include m.tablet {
+    bottom: -5px;
+  }
+  svg {
+    position: relative;
+    display: block;
+    width: calc(106% + 1.3px);
+    height: 60px;
+    @include m.tablet {
+      width: calc(100% + 1.3px);
+      height: 120px;
+    }
+  }
+  .shape-fill {
+    fill: c.$neutral-2;
+  }
+}

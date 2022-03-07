@@ -1,0 +1,25 @@
+@use 'base/variables' as v;
+@use 'base/colours' as c;
+@use 'base/mixins' as m;
+
+.button{
+    margin: 1rem 0 1rem;
+    padding: 0.6rem 6rem;
+    border:none;
+    border-radius: 1rem;   
+    text-align: center;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+    @include m.telefono{
+        padding: 0.8rem 6rem;
+    }
+    @include m.tablet{
+        padding: 0.8rem 4rem;
+        margin: 0;
+    }                     
+}
+.button--view{
+    display: inline-block;
+    background-color: c.$btn-view;
+}

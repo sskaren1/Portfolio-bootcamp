@@ -1,0 +1,39 @@
+@use 'base/variables' as v;
+@use 'base/colours' as c;
+@use 'base/mixins' as m;
+
+.footer{
+    background-color: c.$footer-bg;
+    width: 100%;
+}
+.footer__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: v.$padding_elemt 0 0;
+    text-align: center;
+    @include m.tablet{
+        @include m.grid-col-row(2,2,v.$gap-1);
+    }
+}
+
+.footer__site{
+    @include m.tablet{
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+}
+.follow--footer{
+    @include m.tablet{
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+}
+
+.footer__copyright{
+    @include m.tablet{
+        grid-row: 2/3;
+        grid-column: 1/4;
+    }
+}

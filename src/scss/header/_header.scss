@@ -1,0 +1,19 @@
+@use 'base/variables' as v;
+@use 'base/colours' as c;
+@use 'base/mixins' as m;
+
+.header{
+    background-color: c.$header-bg;
+    height: auto;
+    overflow:hidden;
+    &.fijo {
+        width: 100%;
+        position: fixed;//mantenga fijo       
+        z-index: 1;//esté por encima de todos los elementos
+        top: 0;//que esté arriba
+    }
+}
+
+.header__container{
+    padding: calc(v.$padding_div/2) 0;
+}

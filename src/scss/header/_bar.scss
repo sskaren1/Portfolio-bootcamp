@@ -1,0 +1,64 @@
+@use "base/variables" as v;
+@use "base/colours" as c;
+@use "base/mixins" as m;
+
+.bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav {
+  display: none;
+  position: fixed;
+  @include m.tablet {
+    display: flex;
+    position: static;//default
+  }
+}
+
+.nav--float {
+  display: block;
+  top: 6rem;
+  left: 0;
+  background-color: rgba($color: c.$header-bg, $alpha: 0.9);
+  width: 100%;
+  padding: v.$padding-elemt 0;
+
+  @include m.tablet {
+    width: auto;
+    padding: 0;
+    background-color: c.$header-bg;
+  }
+}
+
+.nav-list {
+  @include m.tablet {
+    display: flex;
+    align-items: center;
+  }
+  .nav-list__item {
+    text-align: center;
+    @include m.tablet {
+      margin-right: v.$margin_elemt;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.icon-hamburguer {
+  display: flex;
+  @include m.tablet {
+    display: none;
+  }
+}
+
+.follow {
+  .follow__icon {
+    margin-right: v.$margin_elemt;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
