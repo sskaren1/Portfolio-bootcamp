@@ -4,6 +4,7 @@ window.addEventListener("scroll", function(){
 
 document.addEventListener('DOMContentLoaded', function() {
     menuFlotante();
+    btnProject();
 });
 
 
